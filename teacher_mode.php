@@ -36,12 +36,14 @@
 	
 	<script>
 	$(function() {
-				
+	
+	var i_id = 0; // "iteration_id" permet de contrôler le comportement de la condition à la ligne 69.			
 	var q_id = 0; // Initialisation des id du formulaire qui nous serviront plus tard en PHP.
 	var r_id = 0;
 	var qcm_name = '<input type="text" id="qcm_name" name="qcm_name" value="Nom du QCM"></input>'; // Regroupement HTML du champ de nom du QCM.
-	var add_ques = '<input type="button" value="Ajouter une question" class="add_ques"></input>'; // Regroupement HTML des boutons d'ajouts de question et réponses.
-	var add_answ = '<input type="button" value="Ajouter une réponse" class="add_answ"></input>';
+	var add_ques = '<input type="button" id="add_ques" value="Ajouter une question" class="add_ques"></input>'; // Regroupement HTML des boutons d'ajouts de questions et réponses.
+	var add_answ = '<input type="button" id="add_answ" value="Ajouter une réponse" class="add_answ"></input>';
+	var checking = '<input type="button" id="checking" value ="Valider cette question" class="checking"></input>';
 	
 	$('<input type="button" value="Créer un QCM"></input>').appendTo($('body')).click(function() { // Création du QCM
 	
@@ -57,10 +59,31 @@
 			
 				$(add_answ).appendTo($('body')).click(function add_answ() { // On crée le bouton d'ajout de réponses.
 				
-				r_id++; // On incrémente la variable d'identifiant de questions.	
+				i_id++;
+				r_id++; // On incrémente la variable d'identifiant de réponses.	
 				$('<input type="text" id="' + r_id + '" name="' + r_id + '" value="Réponse n°' + r_id + '"></input>').appendTo($('body')); // Insertion du champ réponse.
 				$('<p class="rad_label">V</p><input type="radio" id="'+ r_id +'" name="'+ r_id +'" value="v"></input>').appendTo($('body')); // Insertion des boutons radios V(rai) & F(aux).
 				$('<p class="rad_label">F</p><input type="radio" id="'+ r_id +'" name="'+ r_id +'" value="f"></input>').appendTo($('body'));
+				
+				if(i_id >= 4) {
+				
+					$(checking).appendTo($('body')).click(function() {
+					
+						$('#add_answ').hide();
+						$(this).hide();
+						$('#add_ques').show().append('body');
+						var i_id = 0;
+
+					
+					});
+					
+				
+					}
+					
+				else {
+						
+					}
+								
 				});
 		
 			});		
