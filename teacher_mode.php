@@ -52,23 +52,15 @@
 		$(add_ques).appendTo($('body')).click(function add_ques() { // On crée le bouton d'ajout de questions.
 		
 			q_id++; // On incrémente la variable d'identifiant de questions.
-			var q_ins_id = 'id="' + q_id + '" name="' + q_id + '"'; // Regroupement des attributs HTML des questions et réponses.
-			var q = '<input type="text"' + q_ins_id + ' value="Question n°' + q_id + '"></input>'; // Regroupement HTML des questions et réponses.
-		
 			$(this).hide(); // On cache le bouton pour éviter un reset.
-			$(q).appendTo($('body')) // Un champ de question s'ouvre.
+			$('<input type="text" id="'+ q_id +'" name="'+ q_id +'" value="Question n°' + q_id + '"></input>').appendTo($('body')) // Un champ de question s'ouvre.
 			
 				$(add_answ).appendTo($('body')).click(function add_answ() { // On crée le bouton d'ajout de réponses.
 				
-				r_id++; // On incrémente la variable d'identifiant de questions.
-				var r_ins_id = 'id="' + r_id + '" name="' + r_id + '"';
-				var r = '<input type="text"' + r_ins_id + ' value="Réponse n°' + r_id + '"></input>'; 
-				var rad_v = '<p class="rad_label">V</p><input type="radio"' + r_ins_id + 'value="v"></input>'; // Regroupement HTML des boutons radios qui nous serviront plus tard en PHP.
-				var rad_f = '<p class="rad_label">F</p><input type="radio"' + r_ins_id + 'value="f"></input>';		
-					
-				$(r).appendTo($('body')); // Insertion du champ réponse.
-				$(rad_v).appendTo($('body')); // Insertion des boutons radios V(rai) & F(aux).
-				$(rad_f).appendTo($('body'));
+				r_id++; // On incrémente la variable d'identifiant de questions.	
+				$('<input type="text" id="' + r_id + '" name="' + r_id + '" value="Réponse n°' + r_id + '"></input>').appendTo($('body')); // Insertion du champ réponse.
+				$('<p class="rad_label">V</p><input type="radio" id="'+ r_id +'" name="'+ r_id +'" value="v"></input>').appendTo($('body')); // Insertion des boutons radios V(rai) & F(aux).
+				$('<p class="rad_label">F</p><input type="radio" id="'+ r_id +'" name="'+ r_id +'" value="f"></input>').appendTo($('body'));
 				});
 		
 			});		
