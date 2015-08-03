@@ -1,41 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Essai QCM</title>
-		<meta charset="utf-8">
-		<style>
-		
-		
-			.rad_label
-			{
-				display: inline;
-				margin: 10px;
-			}
-			
-			input[type=text]
-			{
-				display: block;
-				margin : 10px;
-				width: 300px;
-				height: 30px; 
-			}
-			
-			input[type=radio], .rad_label
-			{
-				position: relative;
-				left: 330px;
-				bottom: 40px;
-			}
-		</style>
-	</head>
-	<body>
-		
-	
-	
-	<script src="jquery.js"></script>
-	
-	<script>
-	$(function() {
+$(function() {
 	
 	var i_id = 0; // "iteration_id" permet de contrôler le comportement de la condition à la ligne 68.			
 	var q_id = 0; // Initialisation des id du formulaire qui nous serviront plus tard en PHP.
@@ -47,41 +10,36 @@
 	
 	$('<input type="button" value="Créer un QCM"></input>').appendTo($('body')).click(function() { // Création du QCM
 	
-		$(this).hide(); // On cache le bouton pour éviter un reset du formulaire.
+		$(this).remove(); // On efface le bouton pour éviter un reset du formulaire.
 		$(qcm_name).appendTo($('body')); // le champ nom du QCM est crée.
 		
 		
-		$(add_ques).appendTo($('body')).click(function add_ques() { // On crée le bouton d'ajout de questions.
+		$(add_ques).appendTo($('body')).click(function ques_script() { // On crée le bouton d'ajout de questions.
 		
 			q_id++; // On incrémente la variable d'identifiant de questions.
-			$(this).hide(); // On cache le bouton pour éviter un reset.
 			$('<input type="text" id="'+ q_id +'" name="'+ q_id +'" value="Question n°' + q_id + '"></input>').appendTo($('body')) // Un champ de question s'ouvre.
-			
-				$(add_answ).appendTo($('body')).click(function add_answ() { // On crée le bouton d'ajout de réponses.
+			$('.add_ques').remove(); // On efface les boutons pour éviter des resets. Cela inclue les boutons futurs.
+
+				$(add_answ).appendTo($('body')).click(function answ_script() { // On crée le bouton d'ajout de réponses.
 				
-				i_id++;
+				i_id++; // On incrémente la variable d'itération de la boucle.
 				r_id++; // On incrémente la variable d'identifiant de réponses.	
 				$('<input type="text" id="' + r_id + '" name="' + r_id + '" value="Réponse n°' + r_id + '"></input>').appendTo($('body')); // Insertion du champ réponse.
 				$('<p class="rad_label">V</p><input type="radio" id="'+ r_id +'" name="'+ r_id +'" value="v"></input>').appendTo($('body')); // Insertion des boutons radios V(rai) & F(aux).
 				$('<p class="rad_label">F</p><input type="radio" id="'+ r_id +'" name="'+ r_id +'" value="f"></input>').appendTo($('body'));
 				
-				if(i_id >= 4) {
-				
-					$(checking).appendTo($('body')).click(function() { 
+				if(i_id == 4) { // Dès que la question atteint les 4 réponses, les boutons sont effacés et la variable d'itération remise à zéro.
 					
-						$('#add_answ').hide();
-						$(this).hide();
-						$('#add_ques').show().append('body');
-						i_id = 0;
-					
-					});
-					
+					$('.add_answ').remove();
+					$(this).remove();
+					i_id = 0;
+					$(add_ques).appendTo($('body')).click(function(){ ques_script(); });	// La fonction propose alors de recommencer la création d'une nouvelle question.			
 				
 					}
-					
+									
 				else {
-						
-					}
+				
+				}
 																
 				});
 		
@@ -89,9 +47,3 @@
 	
 		});	
 	});
-	
-	</script>
-	</body>
-	
-	
-</html>
