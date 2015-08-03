@@ -31,7 +31,7 @@
 	<body>
 	
 	<script src="js/jquery.js"></script>
-	<script src="js/qcm_script.js"></script>
+	<script src="js/noelia.js"></script> <!-- Redirection du script Noelia -->
 	
 	</body>
 	
