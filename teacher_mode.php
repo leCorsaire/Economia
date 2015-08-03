@@ -30,8 +30,8 @@
 	</head>
 	<body>
 	
-	<script src="jquery.js"></script>
-	<script src="qcm_script.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/qcm_script.js"></script>
 	
 	</body>
 	
