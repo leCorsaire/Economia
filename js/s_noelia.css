@@ -1,0 +1,43 @@
+			.gen-qcm
+			{
+				/*width: 400px;*/
+				height: auto;
+			}
+			
+			.qcm_name
+			{
+				margin-bottom: 10px;
+			}
+			
+			.rad_label
+			{
+				display: inline;
+				margin: 10px;
+			}
+			
+			input
+			{
+				margin-top: 10px;
+			}
+			
+			input[type=text]
+			{
+				display: block;
+				height: 30px; 
+			}
+			
+			.qcm, .question
+			{
+				/*width: 400px;*/
+			}
+			
+			.row .question
+			{
+				margin-bottom: 10px;
+				margin-top: 20px;
+			}
+			
+			.rad_aside
+			{
+				margin-top: 15px;
+			}

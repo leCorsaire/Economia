@@ -3,36 +3,14 @@
 	<head>
 		<title>Essai QCM</title>
 		<meta charset="utf-8">
-		<style>
-		
-		
-			.rad_label
-			{
-				display: inline;
-				margin: 10px;
-			}
-			
-			input[type=text]
-			{
-				display: block;
-				margin : 10px;
-				width: 300px;
-				height: 30px; 
-			}
-			
-			input[type=radio], .rad_label
-			{
-				position: relative;
-				left: 330px;
-				bottom: 40px;
-			}
-		</style>
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	</head>
 	<body>
-	
+	<div class="container-fluid">
 	<script src="js/jquery.js"></script>
 	<script src="js/noelia.js"></script> <!-- Redirection du script Noelia -->
-	
+	</div>
 	</body>
 	
 	
