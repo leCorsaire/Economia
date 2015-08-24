@@ -39,19 +39,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="#"><img id="logo" src="img/economia_logo.png"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#">Qu'est-ce qu'Economia ?</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="#">Suivre les cours en ligne</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#">Contacter mon professeur</a>
                     </li>
                 </ul>
             </div>
@@ -63,11 +63,27 @@
     <!-- Page Content -->
     <div class="container">
 
+		<!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+
+                    <li class="active">
+                        <a href="#">Cours de Mme Tournaire</a>
+                    </li>
+                    <li>
+                        <a href="#">Cours de Mme Barnades</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Page Heading
-                    <small>Secondary Text</small>
+                <h1 class="page-header">Cours en ligne
+                    <small>Exercices & révisions</small>
                 </h1>
             </div>
         </div>
@@ -164,43 +180,11 @@
 
         <hr>
 
-        <!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
         <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Economia</p>
                 </div>
             </div>
             <!-- /.row -->
