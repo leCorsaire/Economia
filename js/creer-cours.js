@@ -1,15 +1,15 @@
 $('#creer-cours').click(function creercours() {
 
-	var c_titre = '<input class="champ form-control" type="text" value="Titre du cours"></input>';
-	var c_s_titre = '<input class="champ form-control" type="text" value="Sous-titre du cours"></input>';
-	var c_desc = '<input class="champ form-control" name="editor1" id="editor1" type="textarea" value="Description du cours"></input>';
-	var c_lien = '<input class="champ form-control" type="text" value="Lien de la vidéo de cours"></input>';
+	var c_titre = '<input id="titre" name="titre" class="champ form-control" type="text" value="Titre du cours"></input>';
+	var c_s_titre = '<input id="s_titre" name="s_titre" class="champ form-control" type="text" value="Sous-titre du cours"></input>';
+	var c_desc = '<input id="desc" name="editor1" class="champ form-control"  id="editor1" type="textarea" value="Description du cours"></input>';
+	var c_lien = '<input id="lien" name="lien" class="champ form-control" type="text" value="Lien de la vidéo de cours"></input>';
 	var btn_envoyer = '<input class="btn btn-primary" type="submit" value="Valider le cours"></input>';
 	var btn_annuler = '<input class="btn btn-default" type="button" value="Annuler le cours"></input>';
 	
 	$('#creer-cours').hide();
 	
-	$('<form method="POST" action="create_lesson_treatment.php"></form>').appendTo('.container-fluid');
+	$('<form method="POST" action="function/create_lesson_treatment.php"></form>').appendTo('.container-fluid');
 	
 	$('<div class="row"></div>').appendTo('form');
 		$('<div id="cadre-video" class="col-md-7"></div>').appendTo('.row');
