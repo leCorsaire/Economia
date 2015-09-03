@@ -1,0 +1,21 @@
+.champ
+{
+	display: block;
+	margin-top : 10px;
+	margin-bottom: 10px;
+}
+
+.champ[type=textarea]
+{
+	height: 180px;
+}
+
+.btn-primary
+{
+	margin-right: 5px;
+}
+
+.btn
+{
+	margin-top: 10px;
+}
