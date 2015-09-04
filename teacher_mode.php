@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/s_teacher_mode.css">
 		<script src="//cdn.ckeditor.com/4.5.3/basic/ckeditor.js"></script>
+		<script src="js/noelia.js"></script>
 		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
    		 <!-- Bootstrap Core CSS -->
     	<link href="css/bootstrap.min.css" rel="stylesheet">

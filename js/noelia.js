@@ -1,4 +1,7 @@
-$(function() {
+function noelia(){
+
+
+$(function noelia() {
 	
 	$('<link rel="stylesheet" href="js/s_noelia.css">').appendTo($('body')); // Lien de la feuille de style personnalisée de l'application noelia.js
 		
@@ -11,23 +14,23 @@ $(function() {
 	
 	$('<input type="button" value="Créer un QCM" class="btn btn-default"></input>').appendTo($('.container-fluid')).click(function() { // Création du QCM
 	
-		$('<form action="target.php" method="POST" class="gen-qcm">').appendTo($('.container-fluid')); // création de la balise de formulaire intégrée directement dans le container-fluid bootstrap.
+		$('<form id="form-qcm" action="target.php" method="POST" class="gen-qcm">').appendTo($('.container-fluid')); // création de la balise de formulaire intégrée directement dans le container-fluid bootstrap.
 		$(this).remove(); // On efface le bouton pour éviter un reset du formulaire.
-		$(qcm_name).appendTo($('form')); // le champ nom du QCM est crée.
+		$(qcm_name).appendTo($('#form-qcm')); // le champ nom du QCM est crée.
 		
 		
-		$(add_ques).appendTo($('form')).click(function ques_script() { // On crée le bouton d'ajout de questions.
+		$(add_ques).appendTo($('#form-qcm')).click(function ques_script() { // On crée le bouton d'ajout de questions.
 		
 			q_id++; // On incrémente la variable d'identifiant de questions.
-			$('<div class="row"><div class="col-sm-8"><input type="text" id="q_'+ q_id +'" name="q_'+ q_id +'" value="Question n°' + q_id + '" class="form-control question"></input></div></div>').appendTo($('form')) // Un champ de question s'ouvre.
+			$('<div class="row"><div class="col-sm-8"><input type="text" id="q_'+ q_id +'" name="q_'+ q_id +'" value="Question n°' + q_id + '" class="form-control question"></input></div></div>').appendTo($('#form-qcm')) // Un champ de question s'ouvre.
 			$('.add_ques').remove(); // On efface les boutons pour éviter des resets. Cela inclue les boutons futurs.
 			$('.submit-button').remove(); // Pour empêcher de soumettre un formulaire incomplet
 
-				$(add_answ).appendTo($('form')).click(function answ_script() { // On crée le bouton d'ajout de réponses.
+				$(add_answ).appendTo($('#form-qcm')).click(function answ_script() { // On crée le bouton d'ajout de réponses.
 				
 				i_id++; // On incrémente la variable d'itération de la boucle.
 				r_id++; // On incrémente la variable d'identifiant de réponses.
-				$('<div id="answ_div'+ r_id +'" class="row"></div>').appendTo($('form')); // Création d'un row bootstrap pour grouper une réponse et ses boutons radios sur une ligne.
+				$('<div id="answ_div'+ r_id +'" class="row"></div>').appendTo($('#form-qcm')); // Création d'un row bootstrap pour grouper une réponse et ses boutons radios sur une ligne.
 				$('<div class="col-sm-6"><input type="text" id="r_' + r_id + '" name="r_' + r_id + '" value="Réponse n°' + r_id + '" class="form-control answer"></input></div>').appendTo($('#answ_div'+ r_id +'')); // Insertion du champ réponse.
 				$('<aside id="rad_aside_'+ r_id +'" class="col-sm-2 rad_aside"></aside>').appendTo($('#answ_div'+ r_id +'')); // Aside de groupe pour les boutons radio afin de les intégrer dans Bootstrap.
 				$('<p class="rad_label">V</p><input type="radio" id="radio_'+ r_id +'" name="radio_'+ r_id +'" value="v"></input>').appendTo($('#rad_aside_'+ r_id +'')); // Insertion des boutons radios V(rai) & F(aux).
@@ -38,8 +41,8 @@ $(function() {
 					$('.add_answ').remove();
 					$(this).remove();
 					i_id = 0;
-					$(add_ques).appendTo($('form')).click(function(){ ques_script(); });	// La fonction propose alors de recommencer la création d'une nouvelle question.			
-					$('<input class="submit-button btn btn-default" type="submit" value="Valider le QCM"></input></form>').appendTo($('form'));
+					$(add_ques).appendTo($('#form-qcm')).click(function(){ ques_script(); });	// La fonction propose alors de recommencer la création d'une nouvelle question.			
+					$('<input class="submit-button btn btn-default" type="submit" value="Valider le QCM"></input></form>').appendTo($('#form-qcm'));
 					
 					}
 									
@@ -53,3 +56,4 @@ $(function() {
 	
 		});	
 	});
+}

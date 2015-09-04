@@ -2,7 +2,7 @@ $('#creer-cours').click(function creercours() {
 
 	var c_titre = '<input id="titre" name="titre" class="champ form-control" type="text" value="Titre du cours"></input>';
 	var c_s_titre = '<input id="s_titre" name="s_titre" class="champ form-control" type="text" value="Sous-titre du cours"></input>';
-	var c_desc = '<input id="desc" name="editor1" class="champ form-control"  id="editor1" type="textarea" value="Description du cours"></input>';
+	var c_desc = '<input id="desc" name="desc" class="champ form-control" type="textarea" value="Description du cours"></input>';
 	var c_lien = '<input id="lien" name="lien" class="champ form-control" type="text" value="Lien de la vidéo de cours"></input>';
 	var btn_envoyer = '<input class="btn btn-primary" type="submit" value="Valider le cours"></input>';
 	var btn_annuler = '<input class="btn btn-default" type="button" value="Annuler le cours"></input>';
@@ -20,6 +20,9 @@ $('#creer-cours').click(function creercours() {
 			$(c_titre).appendTo('#cadre-info');
 			$(c_s_titre).appendTo('#cadre-info');
 			$(c_desc).appendTo('#cadre-info');
+			
+			$(noelia()).appendTo('#cadre-info');
+			
 			$(btn_envoyer).appendTo('#cadre-info');
 			$(btn_annuler).appendTo('#cadre-info').click(function() {
 			
@@ -28,7 +31,7 @@ $('#creer-cours').click(function creercours() {
 			
 			});
 			
-                CKEDITOR.replace('editor1');
+                CKEDITOR.replace('desc');
 
 			
 
